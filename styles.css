@@ -1,0 +1,211 @@
+:root {
+  --primary: #2450e0;
+  --primary-dark: #1b3fb8;
+  --primary-soft: #eaf0ff;
+  --navy: #0e1b44;
+  --text: #1f2937;
+  --muted: #5b6475;
+  --surface: #ffffff;
+  --accent: #f5b301;
+  --radius: 24px;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--navy); }
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.18), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(245, 179, 1, 0.18), transparent 45%),
+    linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 55%, var(--navy) 100%);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 32px 16px;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 48px 40px 40px;
+  text-align: center;
+  box-shadow: 0 30px 60px -20px rgba(14, 27, 68, 0.55);
+}
+
+.logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 28px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+h1 {
+  margin: 20px 0 12px;
+  color: var(--navy);
+  font-size: clamp(1.6rem, 4.5vw, 2.25rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0 auto;
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.features {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.features li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 10px;
+  border-radius: 16px;
+  background: #f6f8fc;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.features svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.slogan {
+  margin: -16px 0 24px;
+  color: var(--primary);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.stores {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid #e3e6ec;
+}
+
+.stores h2 {
+  margin: 0 0 16px;
+  color: var(--navy);
+  font-size: 1.0625rem;
+  font-weight: 700;
+}
+
+.store-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.store {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e3e6ec;
+  border-radius: 16px;
+  text-align: left;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.store:hover,
+.store:focus-visible {
+  border-color: var(--primary);
+  background: var(--primary-soft);
+}
+
+.store strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.store svg {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .card { padding: 36px 20px 28px; border-radius: 20px; }
+  .logo { max-width: 240px; margin-bottom: 22px; }
+  .features { grid-template-columns: 1fr; }
+  .features li { flex-direction: row; justify-content: flex-start; padding: 14px 16px; }
+  .store-list { grid-template-columns: 1fr; }
+  .slogan { margin: -12px 0 20px; }
+}
+
+.nowrap { white-space: nowrap; }
