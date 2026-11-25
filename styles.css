@@ -48,14 +48,13 @@ body {
 
 .brand {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  margin: -8px 0 24px;
+  margin: -12px 0 36px;
 }
 
 .logo {
-  width: 200px;
+  width: 184px;
   height: auto;
   display: block;
 }
@@ -91,6 +90,7 @@ h1 {
   line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .lead {
@@ -99,6 +99,7 @@ h1 {
   color: var(--muted);
   font-size: 1.0625rem;
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .features {
@@ -134,16 +135,24 @@ h1 {
 }
 
 .slogan {
-  margin: 0;
-  padding-left: 24px;
-  border-left: 3px solid var(--primary-soft);
-  text-align: left;
-  color: var(--primary);
-  font-size: clamp(1.35rem, 3.6vw, 1.9rem);
-  line-height: 1.2;
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.slogan::before,
+.slogan::after {
+  content: "";
+  width: 28px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 
 .stores {
@@ -153,6 +162,7 @@ h1 {
 }
 
 .stores h2 {
+  text-wrap: balance;
   margin: 0 0 16px;
   color: var(--navy);
   font-size: 1.0625rem;
@@ -161,15 +171,15 @@ h1 {
 
 .store-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
 .store {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 16px;
+  gap: 10px;
+  padding: 16px 14px;
   border: 1px solid #e3e6ec;
   border-radius: 16px;
   text-align: left;
@@ -212,9 +222,8 @@ h1 {
 
 @media (max-width: 520px) {
   .card { padding: 36px 20px 28px; border-radius: 20px; }
-  .brand { gap: 16px; margin: -12px 0 20px; }
-  .logo { width: 132px; }
-  .slogan { padding-left: 16px; }
+  .brand { margin: -8px 0 24px; }
+  .logo { width: 148px; }
   .features { grid-template-columns: 1fr; }
   .features li { flex-direction: row; justify-content: flex-start; padding: 14px 16px; }
   .store-list { grid-template-columns: 1fr; }
