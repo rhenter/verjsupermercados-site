@@ -46,12 +46,18 @@ body {
   box-shadow: 0 30px 60px -20px rgba(14, 27, 68, 0.55);
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: -8px 0 24px;
+}
+
 .logo {
-  width: 100%;
-  max-width: 300px;
+  width: 200px;
   height: auto;
   display: block;
-  margin: 0 auto 28px;
 }
 
 .badge {
@@ -128,11 +134,16 @@ h1 {
 }
 
 .slogan {
-  margin: -16px 0 24px;
+  margin: 0;
+  padding-left: 24px;
+  border-left: 3px solid var(--primary-soft);
+  text-align: left;
   color: var(--primary);
-  font-size: 1.0625rem;
-  font-weight: 600;
+  font-size: clamp(1.35rem, 3.6vw, 1.9rem);
+  line-height: 1.2;
+  font-weight: 800;
   font-style: italic;
+  letter-spacing: -0.01em;
 }
 
 .stores {
@@ -201,11 +212,12 @@ h1 {
 
 @media (max-width: 520px) {
   .card { padding: 36px 20px 28px; border-radius: 20px; }
-  .logo { max-width: 240px; margin-bottom: 22px; }
+  .brand { gap: 16px; margin: -12px 0 20px; }
+  .logo { width: 132px; }
+  .slogan { padding-left: 16px; }
   .features { grid-template-columns: 1fr; }
   .features li { flex-direction: row; justify-content: flex-start; padding: 14px 16px; }
   .store-list { grid-template-columns: 1fr; }
-  .slogan { margin: -12px 0 20px; }
 }
 
 .nowrap { white-space: nowrap; }
